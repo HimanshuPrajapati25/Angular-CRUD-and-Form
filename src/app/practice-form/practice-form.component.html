@@ -1,0 +1,65 @@
+<h1 class="text-center">Form-practice</h1>
+<div class="row justify-content-center">
+  <div class="col-md-6 text-left bg-white shadow rounded py-3">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div ngModelGroup="userData">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="name" class="form-control" ngModel name="name" #name="ngModel" required />
+          <small *ngIf="!name.valid && name.touched">Name is required</small>
+        </div>
+        <button class="btn btn-success" (click)="onSetValue()">
+          Set Value
+        </button>
+        <div class="mb-3">
+          <label for="emial" class="form-label">Email address</label>
+          <input type="email" class="form-control" ngModel name="email" #email="ngModel" required />
+          <small *ngIf="!email.valid && email.touched">Email is required</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="about" class="form-label">About Your Self</label>
+        <textarea name="about" class="form-control" cols="10" rows="5" ngModel placeholder="About your couse"
+          required></textarea>
+      </div>
+      <div class="mb-3">
+        <select name="course" class="form-control" id="" ngModel [ngModel]="defaultCoures">
+          <option value="Angualr">Angular</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Html">Html</option>
+          <option value="css">css</option>
+        </select>
+      </div>
+      <div class="mb-3 form-check" *ngFor="let item of genders">
+        <span>
+          <input type="radio" class="form-check-input" [value]="item" ngModel name="gender" [ngModel]="defaultGender" />
+          {{ item }}
+        </span>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<hr />
+<div class="row justify-content-center" *ngIf="sumitted">
+  <div class="col-md-6 text-left bg-white shadow rounded py-3">
+    <h1 class="text-center">Form Data</h1>
+    <p>
+      Name is <strong>{{ userDetail.name }}</strong>
+    </p>
+    <p>
+      Email is <strong>{{ userDetail.email }}</strong>
+    </p>
+    <p>
+      password is <strong>{{ userDetail.about }}</strong>
+    </p>
+    <p>
+      course is <strong>{{ userDetail.course }}</strong>
+    </p>
+    <p>
+      Gender is <strong>{{ userDetail.gender }}</strong>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "student": [
+    {
+      "name": "Himanshu",
+      "email": "h25p@gmail.com",
+      "course": "Html,css",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "name": "maya",
+      "email": "maya@gamil.com",
+      "course": "Javascript",
+      "gender": "Female",
+      "id": 4
+    },
+    {
+      "name": "Himanshu",
+      "email": "h25p@gmail.com",
+      "course": "Angular",
+      "gender": "Male",
+      "id": 5
+    },
+    {
+      "name": "abc",
+      "email": "abc@aba.com",
+      "course": "Javascript",
+      "gender": "Male",
+      "id": 6
+    },
+    {
+      "name": "sell",
+      "email": "sell@sell.com",
+      "course": "Html,css",
+      "gender": "Male",
+      "id": 7
+    }
+  ]
+}
